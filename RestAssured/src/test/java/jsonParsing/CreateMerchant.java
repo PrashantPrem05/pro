@@ -1,0 +1,106 @@
+package jsonParsing;
+
+import org.apache.commons.lang3.RandomStringUtils;
+import org.testng.annotations.Test;
+
+import io.restassured.RestAssured;
+
+public class CreateMerchant {
+
+	@Test
+	public void createMerchant()
+	{
+		String random =RandomStringUtils.randomAlphanumeric(4);
+		String email = random+"@gmail.com";
+		System.out.println(email);
+		
+				RestAssured.given().relaxedHTTPSValidation().body("{\r\n"
+				+ "  \"city\": \"string\",\r\n"
+				+ "  \"commission\": 25,\r\n"
+				+ "  \"company\": {\r\n"
+				+ "    \"address\": {\r\n"
+				+ "      \"addressId\": 0,\r\n"
+				+ "      \"buildingInfo\": \"string\",\r\n"
+				+ "      \"city\": \"Bengaluru\",\r\n"
+				+ "      \"country\": \"INDIA\",\r\n"
+				+ "      \"landmark\": \"RAJAJINAGAR\",\r\n"
+				+ "      \"name\": \"PrashantMerchant\",\r\n"
+				+ "      \"phone\": \"9912345674\",\r\n"
+				+ "      \"pincode\": \"560022\",\r\n"
+				+ "      \"state\": \"Karnataka\",\r\n"
+				+ "      \"streetInfo\": \"string\",\r\n"
+				+ "      \"type\": \"HOME\"\r\n"
+				+ "    },\r\n"
+				+ "    \"companyId\": 0,\r\n"
+				+ "    \"email\": \""+email+"\",\r\n"
+				+ "    \"gstn\": \"ABC123\",\r\n"
+				+ "    \"name\": \"string\",\r\n"
+				+ "    \"phone\": \"9912345674\",\r\n"
+				+ "    \"registerNumber\": \"ABD123\",\r\n"
+				+ "    \"webAddress\": \"string\"\r\n"
+				+ "  },\r\n"
+				+ "  \"country\": \"INDIA\",\r\n"
+				+ "  \"createdDateTime\": \"2025-09-10T12:53:24.974Z\",\r\n"
+				+ "  \"dob\": \"1994-02-12\",\r\n"
+				+ "  \"email\": \"\"+email+\"\",\r\n"
+				+ "  \"firstName\": \"PRASHANT\",\r\n"
+				+ "  \"gender\": \"MALE\",\r\n"
+				+ "  \"imageId\": \"string\",\r\n"
+				+ "  \"jwtToken\": \"string\",\r\n"
+				+ "  \"lastName\": \"PREM01\",\r\n"
+				+ "  \"password\": \"Api@1010\",\r\n"
+				+ "  \"phone\": \"9912345674\",\r\n"
+				+ "  \"productAdded\": 0,\r\n"
+				+ "  \"productLimit\": 10,\r\n"
+				+ "  \"role\": \"ADMIN\",\r\n"
+				+ "  \"state\": \"string\",\r\n"
+				+ "  \"status\": \"ACTIVE\",\r\n"
+				+ "  \"token\": \"string\",\r\n"
+				+ "  \"zoneId\": \"ALPHA\"\r\n"
+				+ "}").body("{\r\n"
+						+ "  \"city\": \"string\",\r\n"
+						+ "  \"commission\": 25,\r\n"
+						+ "  \"company\": {\r\n"
+						+ "    \"address\": {\r\n"
+						+ "      \"addressId\": 0,\r\n"
+						+ "      \"buildingInfo\": \"string\",\r\n"
+						+ "      \"city\": \"Bengaluru\",\r\n"
+						+ "      \"country\": \"India\",\r\n"
+						+ "      \"landmark\": \"string\",\r\n"
+						+ "      \"name\": \"Prashant\",\r\n"
+						+ "      \"phone\": \"9912345674\",\r\n"
+						+ "      \"pincode\": \"560022\",\r\n"
+						+ "      \"state\": \"string\",\r\n"
+						+ "      \"streetInfo\": \"string\",\r\n"
+						+ "      \"type\": \"string\"\r\n"
+						+ "    },\r\n"
+						+ "    \"companyId\": 0,\r\n"
+						+ "    \"email\": \"string\",\r\n"
+						+ "    \"gstn\": \"string\",\r\n"
+						+ "    \"name\": \"string\",\r\n"
+						+ "    \"phone\": \"9912345674\",\r\n"
+						+ "    \"registerNumber\": \"string\",\r\n"
+						+ "    \"webAddress\": \"string\"\r\n"
+						+ "  },\r\n"
+						+ "  \"country\": \"string\",\r\n"
+						+ "  \"createdDateTime\": \"2025-09-12T11:36:11.143Z\",\r\n"
+						+ "  \"dob\": \"string\",\r\n"
+						+ "  \"email\": \"string\",\r\n"
+						+ "  \"firstName\": \"string\",\r\n"
+						+ "  \"gender\": \"string\",\r\n"
+						+ "  \"imageId\": \"string\",\r\n"
+						+ "  \"jwtToken\": \"string\",\r\n"
+						+ "  \"lastName\": \"string\",\r\n"
+						+ "  \"password\": \"Api@1010\",\r\n"
+						+ "  \"phone\": \"9912345674\",\r\n"
+						+ "  \"productAdded\": 0,\r\n"
+						+ "  \"productLimit\": 0,\r\n"
+						+ "  \"role\": \"ADMIN\",\r\n"
+						+ "  \"state\": \"string\",\r\n"
+						+ "  \"status\": \"ACTIVE\",\r\n"
+						+ "  \"token\": \"string\",\r\n"
+						+ "  \"zoneId\": \"string\"\r\n"
+						+ "}")
+				.contentType("application/json").when().post("https://www.shoppersstack.com/shopping/merchants").then().log().all();
+	}
+}
