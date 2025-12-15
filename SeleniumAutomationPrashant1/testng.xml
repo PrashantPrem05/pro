@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test  name="TestChrome">
+  <parameter name="Browsers" value="chrome"></parameter>
+    <classes>
+      <class name="runnerScript.Tc_02Verify"/>
+       <class name="runnerScript.Tc_Admin"/>
+      <class name="runnerScript.TcAddEMp"/>
+      
+    </classes>
+  </test> <!-- Test -->
+  <test  name="TestChrome">
+  <parameter name="Browsers" value="chrome"></parameter>
+    <classes>
+      <class name="runnerScript.Tc_02Verify"/>
+      <class name="runnerScript.Tc_Admin"/>
+      <class name="runnerScript.TcAddEMp"/>
+      
+    </classes>
+  </test> <!-- Test -->
+   
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
